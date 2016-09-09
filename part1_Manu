@@ -1,0 +1,58 @@
+-- File: part1.adb
+
+with Ada.Text_IO, Ada.Calendar;
+Use Ada.Text_IO, Ada.Calendar;
+
+Procedure part1 is
+
+	Procedure F1 is  	
+		Message : constant String := "F1 is executing, The time now is";
+		Period1 : Duration := 1.0;
+		Start_Time1 : Time := Clock;
+		Next_Time1 : Time := Start_Time1 + period1;
+	begin
+		loop
+			Put(Message);
+			delay until Next_Time1;
+			Next_Time1 := Next_Time1 + period1;
+			Put_Line(Duration'Image(Clock - Start_Time1));
+		end loop;
+	end F1;
+		
+	Procedure F2 is
+		Message : constant String := "F2 is executing, The time now is";
+		Period2 : Duration := 1.0;
+		Start_Time2 : Time := Clock + 0.5;
+		Next_Time2 : Time := Start_Time2 + period2;
+	begin
+		loop
+			Put(Message);
+			delay until Next_Time2;
+			Next_Time2 := Next_Time2 + period2;
+			Put_Line(Duration'Image(Clock - Start_Time2));
+		end loop;
+	end F2;
+	
+	Procedure F3 is
+		Message : constant String := "F3 is executing, The time now is";
+		Period3 : Duration := 2.0;
+		Start_Time3 : Time := Clock + 1.5;
+		Next_Time3 : Time := Start_Time3 + Period3;
+	begin
+		loop
+			Put(Message);
+			delay until Next_Time3;
+			Next_Time3 := Next_Time3 + Period3;
+			Put_Line(Duration'Image(Clock - Start_Time3));
+		end loop;	
+	end F3;
+	
+	
+
+begin
+	F1;
+	F2;
+	F3;
+
+end part1;
+
